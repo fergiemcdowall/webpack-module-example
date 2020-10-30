@@ -1,0 +1,19 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# leveldb sandbox
+test/sandbox/*
+
+# compiled test files
+test/cjs/*
+
+# random crud
+.DS_Store
