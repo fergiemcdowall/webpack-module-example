@@ -1,0 +1,19 @@
+{
+  "name": "webpack-module-example",
+  "version": "0.0.0",
+  "description": "Example of javascript module compiled with webpack",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fergiemcdowall/webpack-module-example.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fergiemcdowall/webpack-module-example/issues"
+  },
+  "homepage": "https://github.com/fergiemcdowall/webpack-module-example#readme"
+}
