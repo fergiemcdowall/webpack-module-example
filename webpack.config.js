@@ -11,6 +11,7 @@ const config = {
     filename: 'simple-db.js',
     library: 'simpleDB'
   },
+  mode: 'development',
   plugins: [
     // Webpack 5 no longer polyfills 'process'
     new webpack.ProvidePlugin({

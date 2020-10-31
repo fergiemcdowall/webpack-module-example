@@ -1,14 +1,11 @@
 import level from 'level'
 
-const writeAndRead = () => {
+//const initDB = () => new Promise ((resolve, reject) => {
+export function init() {
   return new Promise ((resolve, reject) => {
-    level('simple-db', {}, (err, db) => {
-      return db.put('foo', 'BAAAAAAAR')
-        .then(() => db.get('foo'))
-        .then(resolve)
-    })
+    level('simple-db', {}, (err, db) => resolve(db))
   })
-};
+}
+                                 
 
-export default writeAndRead
-//export writeAndRead
+//export default initDB

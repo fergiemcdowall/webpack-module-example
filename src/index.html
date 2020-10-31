@@ -7,7 +7,9 @@
     view console to see output
     <script src="../dist/simple-db.js"></script>
     <script>
-      window.simpleDB.default().then(console.log)
+      window.simpleDB.init().then(db => {
+        db.put('foo', 'bar').then(() => db.get('foo')).then(console.log)
+      })
     </script>
   </body>
 </html>

@@ -1,2 +1,4 @@
-import writeAndRead from '../src/main.js'
-writeAndRead().then(console.log)
+import { init } from '../src/main.js'
+init().then(db => {
+  db.put('foo', 'bar').then(() => db.get('foo')).then(console.log)
+})
