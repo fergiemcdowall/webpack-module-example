@@ -11,10 +11,12 @@ test('test test', t => {
 
 test('create a new database', t => {
   t.plan(1)
-  myModule(indexName).then(db => {
-    global[indexName] = db
-    t.ok(db)
-  })
+  try {
+    myModule(indexName).then(db => {
+      global[indexName] = db
+      t.ok(db)
+    })
+  } catch (e) { t.err(e) }
 })
 
 test('put some data into the database', t => {

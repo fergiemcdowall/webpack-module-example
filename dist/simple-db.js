@@ -1544,10 +1544,10 @@ eval("module.exports = extend\n\nvar hasOwnProperty = Object.prototype.hasOwnPro
   \*********************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 13:0-14 */
+/*! CommonJS bailout: module.exports is used directly at 2:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("// import level from 'level'\n\n// export function init() {\n//   console.log('IN MAIN VERSION')\n//   return new Promise ((resolve, reject) => {\n    \n//     level('simple-db', {}, (err, db) => resolve(db))\n//   })\n// }\n\n\nconst level = __webpack_require__(/*! level */ \"./node_modules/level/browser.js\")\nmodule.exports = name => new Promise ((resolve, reject) => {\n  level(name, {}, (err, db) => err ? reject(err) : resolve(db))\n})\n\n\n//# sourceURL=webpack://simpleDB/./src/main.js?");
+eval("const level = __webpack_require__(/*! level */ \"./node_modules/level/browser.js\")\nmodule.exports = name => new Promise ((resolve, reject) => {\n  level(name, {}, (err, db) => err ? reject(err) : resolve(db))\n})\n\n\n//# sourceURL=webpack://simpleDB/./src/main.js?");
 
 /***/ }),
 
