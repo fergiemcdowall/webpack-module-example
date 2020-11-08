@@ -7,7 +7,7 @@
     view console to see output
     <script src="../dist/simple-db.js"></script>
     <script>
-      window.simpleDB.init().then(db => {
+      window.simpleDB('BEST_DB_EVER').then(db => {
         db.put('foo', 'bar').then(() => db.get('foo')).then(console.log)
       })
     </script>

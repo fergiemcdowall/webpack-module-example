@@ -1,11 +1,15 @@
-import level from 'level'
+// import level from 'level'
 
-//const initDB = () => new Promise ((resolve, reject) => {
-export function init() {
-  return new Promise ((resolve, reject) => {
-    level('simple-db', {}, (err, db) => resolve(db))
-  })
-}
-                                 
+// export function init() {
+//   console.log('IN MAIN VERSION')
+//   return new Promise ((resolve, reject) => {
+    
+//     level('simple-db', {}, (err, db) => resolve(db))
+//   })
+// }
 
-//export default initDB
+
+const level = require('level')
+module.exports = name => new Promise ((resolve, reject) => {
+  level(name, {}, (err, db) => err ? reject(err) : resolve(db))
+})

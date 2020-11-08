@@ -1,13 +1,15 @@
 {
   "name": "webpack-module-example",
   "version": "0.0.0",
+  "main": "src/main.js",
   "description": "Example of javascript module compiled with webpack",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "run-node": "node test/node-test-cjs.js",
-    "run-browser-standalone": "node bundler.js && open-cli src/index.html"
+    "empty-sandbox": "rm -rf test/sandbox/*",
+    "test": "npm run test-node && npm run test-browser",
+    "test-browser": "npm run empty-sandbox && webpack && cat test/sandbox/browser-tests.js | tape-run",
+    "test-node": "npm run empty-sandbox && tape test/src/*.js",
+    "test-standalone": "webpack && open-cli src/index.html"
   },
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fergiemcdowall/webpack-module-example.git"
@@ -20,12 +22,29 @@
   "homepage": "https://github.com/fergiemcdowall/webpack-module-example#readme",
   "dependencies": {
     "assert": "^2.0.0",
+    "bluebird": "^3.7.2",
+    "constants": "0.0.2",
+    "constants-browserify": "^1.0.0",
     "level": "^6.0.1",
+    "module": "^1.2.5",
+    "os": "^0.1.1",
+    "path": "^0.12.7",
     "process": "^0.11.10",
+    "stream": "0.0.2",
+    "tape": "^5.0.1",
+    "vm": "^0.1.0",
     "webpack": "^5.3.2",
-    "webpack-cli": "^4.1.0"
+    "webpack-cli": "^4.1.0",
+    "worker-threads": "^1.0.0"
   },
   "devDependencies": {
-    "open-cli": "^6.0.1"
+    "esm": "^3.2.25",
+    "open-cli": "^6.0.1",
+    "path-browserify": "^1.0.1",
+    "rollup": "^2.33.0",
+    "stream-browserify": "^3.0.0",
+    "tap": "^14.10.8",
+    "tape-run": "^8.0.0",
+    "testling": "^1.7.3"
   }
 }
